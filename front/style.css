@@ -1,0 +1,1083 @@
+/* ===================== RESET / BASE ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fundo: #111111;
+  --fundo-card: #2e2e2e;
+  --fundo-input: #222222;
+  --laranja: #e8630a;
+  --vermelho: #f60d0d;
+  --vinho: #4b1c1c;
+  --branco: #ffffff;
+  --cinza-claro: #e5e5e5;
+}
+
+/* Página inteira em GRID: header em cima, conteúdo preenche o resto.
+   Cada página ocupa exatamente uma tela, sem rolagem. */
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background-color: var(--fundo);
+  color: var(--branco);
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.laranja {
+  color: var(--laranja);
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--vermelho);
+  color: var(--branco);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 13px 32px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: filter 0.2s;
+}
+
+.btn:hover {
+  filter: brightness(1.15);
+}
+
+.btn-contorno {
+  background-color: transparent;
+  border: 2px solid var(--vermelho);
+  color: var(--branco);
+}
+
+/* Tinge ícones brancos de laranja */
+.tinta-laranja {
+  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(2422%) hue-rotate(9deg) brightness(96%) contrast(93%);
+}
+
+/* Área de conteúdo: grid de uma célula que a seção da página preenche */
+.conteudo {
+  min-height: 0;
+  display: grid;
+}
+
+.titulo-pagina {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Campos de formulário reutilizáveis */
+.formulario {
+  display: grid;
+  gap: 10px;
+  background-color: var(--fundo-card);
+  padding: 30px 34px;
+  align-content: center;
+}
+
+.formulario label {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+  background-color: var(--fundo-input);
+  border: none;
+  color: var(--branco);
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  outline: none;
+  margin-bottom: 8px;
+  resize: none;
+  width: 100%;
+}
+
+.formulario select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.formulario ::placeholder {
+  color: #8a8a8a;
+}
+
+.formulario .btn {
+  margin-top: 6px;
+}
+
+/* ===================== HEADER (GRID: logo | menu | ícones) ===================== */
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 30px;
+  padding: 12px 60px;
+}
+
+.logo img {
+  width: 92px;
+}
+
+.menu {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 42px;
+}
+
+.menu a {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+  color: var(--laranja);
+}
+
+.header-icones {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 34px;
+}
+
+.header-icones img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* ===================== INÍCIO (GRID: hero em cima, destaques embaixo) ===================== */
+.home {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 30px;
+  padding: 15px 60px 35px;
+}
+
+.hero {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-texto h1 {
+  font-size: 2.7rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.hero-texto p {
+  margin: 22px 0 30px;
+  max-width: 340px;
+  color: var(--cinza-claro);
+  line-height: 1.6;
+}
+
+.hero-imagem {
+  height: 100%;
+  min-height: 0;
+}
+
+.hero-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Faixa de destaques (GRID: card | card | vantagens) */
+.destaques {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2.2fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.card {
+  background-color: var(--fundo-card);
+  padding: 22px 24px;
+  text-align: center;
+  display: grid;
+  align-content: center;
+  gap: 12px;
+}
+
+.card-titulo {
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.card-sub {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--cinza-claro);
+}
+
+.cupom {
+  display: block;
+  background-color: var(--vermelho);
+  color: var(--branco);
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.card-frete {
+  grid-template-rows: 1fr auto;
+  text-align: left;
+}
+
+.card-frete .frete {
+  font-size: 1.3rem;
+}
+
+.icone-frete {
+  width: 44px;
+  justify-self: end;
+}
+
+/* Grade de vantagens 2x2 */
+.vantagens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.vantagem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 28px;
+}
+
+.vantagem img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.vantagem p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.vantagem strong {
+  text-transform: uppercase;
+}
+
+.borda-esq {
+  border-left: 2px solid var(--branco);
+}
+
+.borda-topo {
+  border-top: 2px solid var(--branco);
+}
+
+/* ===================== QUEM SOMOS (GRID: conteúdo + barra de estatísticas) ===================== */
+.quem-somos-conteudo {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 60px;
+  padding: 20px 60px 30px;
+}
+
+.quem-somos-texto h2 {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.quem-somos-texto h3 {
+  font-size: 1.4rem;
+  margin: 6px 0 30px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.quem-somos-texto p {
+  color: var(--cinza-claro);
+  line-height: 1.7;
+  margin-bottom: 26px;
+  max-width: 420px;
+  font-weight: 500;
+}
+
+.quem-somos-imagem {
+  height: 100%;
+  min-height: 0;
+}
+
+.quem-somos-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Página quem somos: grid vertical conteúdo (1fr) + estatísticas (auto) */
+.conteudo:has(.estatisticas) {
+  grid-template-rows: 1fr auto;
+}
+
+.estatisticas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: var(--vinho);
+}
+
+.estatistica {
+  text-align: center;
+  padding: 22px 20px;
+  border-right: 2px solid var(--branco);
+  display: grid;
+  gap: 2px;
+}
+
+.estatistica:last-child {
+  border-right: none;
+}
+
+.estatistica strong {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.estatistica span {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ===================== PRODUTOS (GRID: categorias | conteúdo) ===================== */
+.produtos-layout {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 40px;
+  padding: 10px 60px 26px;
+}
+
+.categorias {
+  background-color: #1a1a1a;
+  padding: 26px 28px;
+  display: grid;
+  align-content: start;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.categorias h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #333333;
+}
+
+.categorias-lista {
+  display: grid;
+  gap: 14px;
+}
+
+.categorias-lista a {
+  color: var(--cinza-claro);
+  font-size: 0.92rem;
+  transition: color 0.2s;
+}
+
+.categorias-lista a:hover,
+.categorias-lista a.ativo {
+  color: var(--laranja);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Coluna de conteúdo: topo (ordenar) + grade */
+.produtos-conteudo {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+}
+
+.produtos-topo {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  align-items: center;
+  gap: 14px;
+  font-weight: 600;
+}
+
+.select-ordenar {
+  background-color: #2b2b2b;
+  border: none;
+  color: var(--branco);
+  font-family: inherit;
+  font-size: 0.92rem;
+  padding: 10px 20px;
+  min-width: 190px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Grade de produtos 4x2 preenchendo a altura */
+.produtos-grade {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 22px;
+}
+
+.produto-card {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  gap: 4px;
+  background-color: #1c1c1c;
+  padding: 14px;
+  transition: background-color 0.2s;
+}
+
+.produto-card:hover {
+  background-color: #262626;
+}
+
+.produto-foto {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.produto-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s;
+}
+
+.produto-card:hover .produto-foto img {
+  transform: scale(1.04);
+}
+
+.produto-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.produto-preco {
+  font-weight: 700;
+  color: var(--cinza-claro);
+  font-size: 0.95rem;
+}
+
+.produto-preco span {
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+/* ===================== PÁGINA DE PRODUTO (DETALHE) ===================== */
+.detalhe-pagina {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 20px;
+  padding: 15px 60px 24px;
+}
+
+.detalhe {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+}
+
+/* Galeria: foto grande + miniaturas */
+.detalhe-galeria {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 14px;
+}
+
+.detalhe-foto {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.detalhe-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detalhe-miniaturas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.detalhe-miniaturas img {
+  width: 100%;
+  height: 74px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.2s;
+}
+
+.detalhe-miniaturas img:hover,
+.detalhe-miniaturas img.ativa {
+  opacity: 1;
+  outline: 2px solid var(--laranja);
+}
+
+/* Informações do produto */
+.detalhe-info {
+  display: grid;
+  align-content: center;
+  gap: 16px;
+}
+
+.detalhe-info h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.detalhe-preco {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.detalhe-preco span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.detalhe-descricao {
+  color: var(--cinza-claro);
+  line-height: 1.6;
+  max-width: 440px;
+}
+
+/* Opções (radio estilizado, sem JS) */
+.detalhe-opcoes {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 14px;
+}
+
+.opcao input {
+  display: none;
+}
+
+.opcao span {
+  display: inline-block;
+  padding: 9px 22px;
+  border: 1px solid #555555;
+  color: var(--cinza-claro);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.opcao input:checked + span {
+  border-color: var(--laranja);
+  color: var(--laranja);
+  font-weight: 600;
+}
+
+/* Quantidade */
+.detalhe-quantidade {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: center;
+  gap: 14px;
+  font-weight: 600;
+}
+
+.quantidade {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.qtd-botao {
+  background-color: var(--fundo-card);
+  padding: 8px 16px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 700;
+}
+
+.qtd-valor {
+  background-color: var(--fundo-input);
+  padding: 8px 22px;
+  text-align: center;
+}
+
+/* Botões de ação */
+.detalhe-acoes {
+  display: grid;
+  gap: 12px;
+  max-width: 380px;
+}
+
+/* Benefícios na base da página */
+.detalhe-beneficios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  border-top: 1px solid #333333;
+  padding-top: 18px;
+}
+
+.beneficio {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.beneficio img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.beneficio p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--cinza-claro);
+}
+
+.beneficio strong {
+  color: var(--branco);
+  text-transform: uppercase;
+}
+
+/* ===================== PROMOÇÕES (GRID: cabeçalho + vitrine + rodapé) ===================== */
+.promocoes-pagina {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 26px;
+  padding: 15px 60px 26px;
+}
+
+.promo-cabecalho {
+  display: grid;
+  gap: 8px;
+}
+
+.promo-cabecalho p {
+  color: var(--cinza-claro);
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+.promo-grade {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* Card de promoção: foto (1fr) + nome + preços + botão */
+.promo-card {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 1fr auto auto auto;
+  gap: 12px;
+  background-color: var(--fundo-card);
+  padding: 16px;
+}
+
+.promo-foto {
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promo-selo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--vermelho);
+  color: var(--branco);
+  font-weight: 700;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+.promo-card h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.promo-precos {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.preco-antigo {
+  color: var(--cinza-claro);
+  text-decoration: line-through;
+  font-size: 0.9rem;
+}
+
+.preco-novo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.promo-rodape p {
+  text-align: center;
+  color: var(--cinza-claro);
+}
+
+/* ===================== CONTATO (GRID: informações | formulário) ===================== */
+.contato-pagina {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 70px;
+  padding: 20px 60px 30px;
+}
+
+.contato-info {
+  display: grid;
+  gap: 16px;
+}
+
+.contato-info > p {
+  color: var(--cinza-claro);
+  line-height: 1.7;
+  max-width: 440px;
+}
+
+.contato-itens {
+  display: grid;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.contato-item {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.contato-item img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  justify-self: center;
+}
+
+.icone-char {
+  font-size: 1.9rem;
+  color: var(--laranja);
+  justify-self: center;
+  line-height: 1;
+}
+
+.contato-item p {
+  line-height: 1.5;
+  color: var(--cinza-claro);
+  font-size: 0.95rem;
+}
+
+.contato-item strong {
+  color: var(--branco);
+  text-transform: uppercase;
+}
+
+/* ===================== CADASTRO (GRID: banner | formulário) ===================== */
+.cadastro-pagina {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 50px;
+  padding: 20px 60px 30px;
+}
+
+/* Banner: imagem de fundo com texto sobreposto (grid de 1 célula) */
+.cadastro-banner {
+  min-height: 0;
+  display: grid;
+  overflow: hidden;
+  position: relative;
+}
+
+.cadastro-banner img {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.35);
+}
+
+.cadastro-banner-texto {
+  grid-area: 1 / 1;
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  gap: 24px;
+  padding: 40px;
+}
+
+.cadastro-banner-texto h2 {
+  font-size: 2.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+.cadastro-vantagens {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.cadastro-vantagens li {
+  color: var(--cinza-claro);
+  font-size: 1rem;
+}
+
+.cadastro-vantagens li::before {
+  content: "\2714";
+  color: var(--laranja);
+  font-weight: 700;
+  margin-right: 12px;
+}
+
+/* Formulário de cadastro: campos em pares */
+.campo-duplo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.campo {
+  display: grid;
+  gap: 8px;
+}
+
+.campo-termos {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: var(--cinza-claro);
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.campo-termos input {
+  width: auto;
+  margin: 4px 0 0;
+  accent-color: var(--laranja);
+}
+
+.campo-termos a:hover {
+  text-decoration: underline;
+}
+
+.cadastro-entrar {
+  text-align: center;
+  color: var(--cinza-claro);
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+.cadastro-entrar a:hover {
+  text-decoration: underline;
+}
+
+/* ===================== RESPONSIVO ===================== */
+/* Em telas menores o conteúdo não cabe em uma tela: liberamos a rolagem */
+@media (max-width: 1024px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+    grid-template-rows: auto auto;
+  }
+
+  .hero,
+  .quem-somos-conteudo,
+  .contato-pagina,
+  .cadastro-pagina,
+  .detalhe {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-imagem img {
+    height: 380px;
+  }
+
+  .quem-somos-imagem img {
+    height: 420px;
+  }
+
+  .destaques {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .vantagens {
+    grid-column: span 2;
+  }
+
+  .produtos-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .produtos-grade,
+  .promo-grade {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+  }
+
+  .produto-foto img {
+    height: 240px;
+  }
+
+  .promo-foto img {
+    height: 260px;
+  }
+
+  .detalhe-foto img {
+    height: 340px;
+  }
+
+  .cadastro-banner img {
+    height: 320px;
+  }
+
+  .detalhe-beneficios {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+  }
+
+  .menu {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    gap: 14px 24px;
+  }
+
+  .home,
+  .quem-somos-conteudo,
+  .produtos-layout,
+  .promocoes-pagina,
+  .contato-pagina,
+  .cadastro-pagina,
+  .detalhe-pagina {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-texto h1 {
+    font-size: 2.2rem;
+  }
+
+  .destaques {
+    grid-template-columns: 1fr;
+  }
+
+  .vantagens {
+    grid-column: auto;
+  }
+
+  .estatisticas {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .estatistica {
+    border-bottom: 2px solid var(--branco);
+  }
+
+  .estatistica:nth-child(even) {
+    border-right: none;
+  }
+
+  .produtos-grade,
+  .promo-grade {
+    grid-template-columns: 1fr;
+  }
+
+  .produto-foto img {
+    height: 300px;
+  }
+
+  .campo-duplo {
+    grid-template-columns: 1fr;
+  }
+}
