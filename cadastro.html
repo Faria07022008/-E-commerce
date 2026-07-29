@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro &mdash; Churrascaria Faustino</title>
+  <link rel="icon" href="imagens/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="imagens/logo.png" alt="Churrascaria Faustino">
+    </a>
+
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="quem-somos.html">Quem somos</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="promocoes.html">Promoções</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="header-icones">
+      <a href="produtos.html" aria-label="Buscar"><img src="imagens/Search.png" alt="Buscar"></a>
+      <a href="#" aria-label="Carrinho"><img src="imagens/Shopping cart.png" alt="Carrinho"></a>
+      <a href="cadastro.html" aria-label="Minha conta"><img src="imagens/User.png" alt="Minha conta"></a>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <section class="cadastro-pagina">
+
+      <div class="cadastro-banner">
+        <img src="imagens/image 1.png" alt="Churrasco fatiado na tábua">
+        <div class="cadastro-banner-texto">
+          <h2>Faça seu cadastro<br>e aproveite!</h2>
+          <ul class="cadastro-vantagens">
+            <li>Acompanhe seus pedidos</li>
+            <li>Receba ofertas exclusivas</li>
+            <li>Mais agilidade nas compras</li>
+            <li>E muito mais vantagens!</li>
+          </ul>
+        </div>
+      </div>
+
+      <form class="formulario formulario-cadastro">
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome">
+          </div>
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com">
+          </div>
+        </div>
+
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
+          </div>
+          <div class="campo">
+            <label for="nascimento">Data de nascimento</label>
+            <input type="text" id="nascimento" name="nascimento" placeholder="dd/mm/aaaa">
+          </div>
+        </div>
+
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Crie uma senha">
+          </div>
+          <div class="campo">
+            <label for="confirmar">Confirmar senha</label>
+            <input type="password" id="confirmar" name="confirmar" placeholder="Repita a senha">
+          </div>
+        </div>
+
+        <label class="campo-termos">
+          <input type="checkbox" name="termos">
+          <span>Li e aceito os <a href="#" class="laranja">Termos de Uso</a> e a <a href="#" class="laranja">Política de Privacidade</a></span>
+        </label>
+
+        <button type="submit" class="btn">Cadastrar</button>
+
+        <p class="cadastro-entrar">J&aacute; tem uma conta? <a href="#" class="laranja">Entrar</a></p>
+      </form>
+
+    </section>
+  </main>
+
+</body>
+</html>

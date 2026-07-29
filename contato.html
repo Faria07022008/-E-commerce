@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato &mdash; Churrascaria Faustino</title>
+  <link rel="icon" href="imagens/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="imagens/logo.png" alt="Churrascaria Faustino">
+    </a>
+
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="quem-somos.html">Quem somos</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="promocoes.html">Promoções</a>
+      <a href="contato.html" class="ativo">Contato</a>
+    </nav>
+
+    <div class="header-icones">
+      <a href="produtos.html" aria-label="Buscar"><img src="imagens/Search.png" alt="Buscar"></a>
+      <a href="#" aria-label="Carrinho"><img src="imagens/Shopping cart.png" alt="Carrinho"></a>
+      <a href="cadastro.html" aria-label="Minha conta"><img src="imagens/User.png" alt="Minha conta"></a>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <section class="contato-pagina">
+
+      <div class="contato-info">
+        <h2 class="titulo-pagina">Fale conosco</h2>
+        <p>Estamos prontos para te atender! Envie sua mensagem, sugestão ou dúvida.</p>
+
+        <div class="contato-itens">
+          <div class="contato-item">
+            <span class="icone-char">&#9990;</span>
+            <p><strong>WhatsApp</strong><br>(11) 99999-9999</p>
+          </div>
+          <div class="contato-item">
+            <span class="icone-char">&#9993;</span>
+            <p><strong>E-mail</strong><br>contato@faustino.com.br</p>
+          </div>
+          <div class="contato-item">
+            <span class="icone-char">&#128337;</span>
+            <p><strong>Horário de atendimento</strong><br>Seg a Sex: 08h &agrave;s 18h &mdash; S&aacute;b: 08h &agrave;s 13h</p>
+          </div>
+          <div class="contato-item">
+            <img src="imagens/Map pin.png" alt="">
+            <p><strong>Endereço</strong><br>Rua do Churrasco, 123 &mdash; São Paulo - SP, 01234-567</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="formulario">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com">
+
+        <label for="assunto">Assunto</label>
+        <select id="assunto" name="assunto">
+          <option>Selecione um assunto</option>
+          <option>Dúvida sobre pedido</option>
+          <option>Sugestão</option>
+          <option>Reclamação</option>
+          <option>Outro</option>
+        </select>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..."></textarea>
+
+        <button type="submit" class="btn">Enviar mensagem</button>
+      </form>
+
+    </section>
+  </main>
+
+</body>
+</html>
