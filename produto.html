@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Picanha Bovina &mdash; Churrascaria Faustino</title>
+  <title>Promoções &mdash; Churrascaria Faustino</title>
   <link rel="icon" href="imagens/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,80 +20,82 @@
     <nav class="menu">
       <a href="index.html">Início</a>
       <a href="quem-somos.html">Quem somos</a>
-      <a href="produtos.html" class="ativo">Produtos</a>
-      <a href="promocoes.html">Promoções</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="promocoes.html" class="ativo">Promoções</a>
       <a href="contato.html">Contato</a>
     </nav>
 
     <div class="header-icones">
       <a href="produtos.html" aria-label="Buscar"><img src="imagens/Search.png" alt="Buscar"></a>
-      <a href="#" aria-label="Carrinho"><img src="imagens/Shopping cart.png" alt="Carrinho"></a>
+      <a href="#" aria-label="Carrinho"><img src="imagens/Shopping_cart.png" alt="Carrinho"></a>
       <a href="cadastro.html" aria-label="Minha conta"><img src="imagens/User.png" alt="Minha conta"></a>
     </div>
   </header>
 
   <main class="conteudo">
-    <section class="detalhe-pagina">
+    <section class="promocoes-pagina">
 
-      <div class="detalhe">
-        <div class="detalhe-galeria">
-          <div class="detalhe-foto">
-            <img src="imagens/image 1 (1).png" alt="Picanha Bovina peça inteira">
-          </div>
-          <div class="detalhe-miniaturas">
-            <img src="imagens/image 1 (1).png" alt="Miniatura 1" class="ativa">
-            <img src="imagens/image 2.png" alt="Miniatura 2">
-            <img src="imagens/image 3.png" alt="Miniatura 3">
-            <img src="imagens/aa.png" alt="Miniatura 4">
-          </div>
-        </div>
-
-        <div class="detalhe-info">
-          <h1>Picanha Bovina<br>Peça Inteira</h1>
-          <p class="detalhe-preco laranja">R$ 119,90 <span>/kg</span></p>
-          <p class="detalhe-descricao">A tradicional picanha bovina, macia, saborosa e com a gordura ideal para deixar seu churrasco ainda melhor.</p>
-
-          <div class="detalhe-opcoes">
-            <label class="opcao">
-              <input type="radio" name="corte" checked>
-              <span>Peça inteira</span>
-            </label>
-            <label class="opcao">
-              <input type="radio" name="corte">
-              <span>Resfriada</span>
-            </label>
-          </div>
-
-          <div class="detalhe-quantidade">
-            <span>Quantidade:</span>
-            <span class="quantidade">
-              <span class="qtd-botao">&minus;</span>
-              <span class="qtd-valor">1</span>
-              <span class="qtd-botao">+</span>
-            </span>
-            <span>kg</span>
-          </div>
-
-          <div class="detalhe-acoes">
-            <a href="#" class="btn">Adicionar ao carrinho</a>
-            <a href="#" class="btn btn-contorno">Comprar agora</a>
-          </div>
-        </div>
+      <div class="promo-cabecalho">
+        <h2 class="titulo-pagina">Promoções <span class="laranja">da semana</span></h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
 
-      <div class="detalhe-beneficios">
-        <div class="beneficio">
-          <img src="imagens/Truck.png" alt="" class="tinta-laranja">
-          <p><strong>Entrega rápida</strong><br>para todo o Brasil</p>
-        </div>
-        <div class="beneficio">
-          <img src="imagens/Award.png" alt="">
-          <p><strong>Embalagem</strong><br>&agrave; v&aacute;cuo</p>
-        </div>
-        <div class="beneficio">
-          <img src="imagens/User.png" alt="" class="tinta-laranja">
-          <p><strong>Compra segura</strong><br>Seus dados protegidos</p>
-        </div>
+      <div class="promo-grade">
+        <article class="promo-card">
+          <div class="promo-foto">
+            <img src="imagens/image_1_1.png" alt="Corte bovino cru na tábua">
+            <span class="promo-selo">-30%</span>
+          </div>
+          <h3>Lorem ipsum dolor</h3>
+          <p class="promo-precos">
+            <span class="preco-antigo">R$ 129,90</span>
+            <span class="preco-novo laranja">R$ 89,90</span>
+          </p>
+          <a href="#" class="btn">Aproveitar</a>
+        </article>
+
+        <article class="promo-card">
+          <div class="promo-foto">
+            <img src="imagens/image_2.png" alt="Picanha fatiada com farofa e molho">
+            <span class="promo-selo">-25%</span>
+          </div>
+          <h3>Consectetur elit</h3>
+          <p class="promo-precos">
+            <span class="preco-antigo">R$ 159,90</span>
+            <span class="preco-novo laranja">R$ 119,90</span>
+          </p>
+          <a href="#" class="btn">Aproveitar</a>
+        </article>
+
+        <article class="promo-card">
+          <div class="promo-foto">
+            <img src="imagens/image_3.png" alt="Corte cru sobre madeira rústica">
+            <span class="promo-selo">-40%</span>
+          </div>
+          <h3>Sed do eiusmod</h3>
+          <p class="promo-precos">
+            <span class="preco-antigo">R$ 99,90</span>
+            <span class="preco-novo laranja">R$ 59,90</span>
+          </p>
+          <a href="#" class="btn">Aproveitar</a>
+        </article>
+
+        <article class="promo-card">
+          <div class="promo-foto">
+            <img src="imagens/aa.png" alt="Corte de carne na tábua redonda">
+            <span class="promo-selo">-15%</span>
+          </div>
+          <h3>Tempor incididunt</h3>
+          <p class="promo-precos">
+            <span class="preco-antigo">R$ 189,90</span>
+            <span class="preco-novo laranja">R$ 161,40</span>
+          </p>
+          <a href="#" class="btn">Aproveitar</a>
+        </article>
+      </div>
+
+      <div class="promo-rodape">
+        <p>Lorem ipsum dolor sit amet: use o cupom <strong class="laranja">CHURRAS10</strong> e ganhe 10% OFF no primeiro pedido.</p>
       </div>
 
     </section>
